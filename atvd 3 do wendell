@@ -1,0 +1,258 @@
+questão 1
+public class DiasDaSemana {
+    public static void main(String[] args) {
+        System.out.println("╔════════════════════════════════╗");
+        System.out.println("║     DIAS DA SEMANA - FIXO      ║");
+        System.out.println("╚════════════════════════════════╝\n");
+        
+        int numero = 3;
+        
+        System.out.println("Número testado: " + numero + "\n");
+        
+        switch (numero) {
+            case 1:
+                System.out.println("1 → Domingo");
+                break;
+            case 2:
+                System.out.println("2 → Segunda-feira");
+                break;
+            case 3:
+                System.out.println("3 → Terça-feira");
+                break;
+            case 4:
+                System.out.println("4 → Quarta-feira");
+                break;
+            case 5:
+                System.out.println("5 → Quinta-feira");
+                break;
+            case 6:
+                System.out.println("6 → Sexta-feira");
+                break;
+            case 7:
+                System.out.println("7 → Sábado");
+                break;
+            default:
+                System.out.println("❌ Número inválido! Deveria ser de 1 a 7.");
+        }
+        
+        System.out.println("\n📋 TESTANDO TODOS OS DIAS:");
+        System.out.println("-".repeat(30));
+        
+        for (int i = 1; i <= 7; i++) {
+            switch (i) {
+                case 1: System.out.println("1 → Domingo"); break;
+                case 2: System.out.println("2 → Segunda-feira"); break;
+                case 3: System.out.println("3 → Terça-feira"); break;
+                case 4: System.out.println("4 → Quarta-feira"); break;
+                case 5: System.out.println("5 → Quinta-feira"); break;
+                case 6: System.out.println("6 → Sexta-feira"); break;
+                case 7: System.out.println("7 → Sábado"); break;
+            }
+        }
+    }
+}
+
+questão 2
+
+
+public class CalculadoraFixa {
+    public static void main(String[] args) {
+        System.out.println("╔════════════════════════════════╗");
+        System.out.println("║        CALCULADORA FIXA        ║");
+        System.out.println("╚════════════════════════════════╝\n");
+        
+        double num1 = 20;
+        double num2 = 5;
+        int operacao = 3; // 1-soma, 2-subtração, 3-divisão, 4-multiplicação
+        
+        System.out.println("VALORES DEFINIDOS:");
+        System.out.println("Primeiro número: " + num1);
+        System.out.println("Segundo número: " + num2);
+        System.out.println("Operação: " + operacao + " - " + getNomeOperacao(operacao) + "\n");
+        
+        System.out.println("RESULTADO:");
+        System.out.println("-".repeat(30));
+        
+        switch (operacao) {
+            case 1: // Soma
+                System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
+                break;
+                
+            case 2: // Subtração
+                System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
+                break;
+                
+            case 3: // Divisão
+                if (num2 == 0) {
+                    System.out.println("❌ Erro: Divisão por zero não permitida!");
+                } else {
+                    System.out.println(num1 + " ÷ " + num2 + " = " + (num1 / num2));
+                }
+                break;
+                
+            case 4: // Multiplicação
+                System.out.println(num1 + " × " + num2 + " = " + (num1 * num2));
+                break;
+                
+            default:
+                System.out.println("❌ Operação inválida!");
+        }
+        
+        System.out.println("\n📋 TESTANDO TODAS AS OPERAÇÕES:");
+        System.out.println("-".repeat(30));
+        
+        for (int op = 1; op <= 4; op++) {
+            switch (op) {
+                case 1:
+                    System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
+                    break;
+                case 2:
+                    System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
+                    break;
+                case 3:
+                    if (num2 != 0) {
+                        System.out.println(num1 + " ÷ " + num2 + " = " + (num1 / num2));
+                    } else {
+                        System.out.println(num1 + " ÷ " + num2 + " = Erro (divisão por zero)");
+                    }
+                    break;
+                case 4:
+                    System.out.println(num1 + " × " + num2 + " = " + (num1 * num2));
+                    break;
+            }
+        }
+    }
+    
+    public static String getNomeOperacao(int op) {
+        switch (op) {
+            case 1: return "Soma";
+            case 2: return "Subtração";
+            case 3: return "Divisão";
+            case 4: return "Multiplicação";
+            default: return "Desconhecida";
+        }
+    }
+}
+
+
+
+
+QUESTÃO 3
+
+public class NumerosPorExtenso {
+    public static void main(String[] args) {
+        System.out.println("╔════════════════════════════════╗");
+        System.out.println("║    NÚMEROS POR EXTENSO - FIXO  ║");
+        System.out.println("╚════════════════════════════════╝\n");
+        
+        int numeroTeste = 102;
+        
+        System.out.println("Número testado: " + numeroTeste + "\n");
+        System.out.println("RESULTADO:");
+        System.out.println("-".repeat(30));
+        System.out.println(numeroTeste + " → " + numeroPorExtenso(numeroTeste));
+        
+        System.out.priimport java.util.Random;
+import java.util.Scanner;
+
+public class JogoAdivinhacao {
+    public static void main(String[] args) {
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        
+        int numeroSecreto = random.nextInt(100) + 1; // Número entre 1 e 100
+        int tentativa;
+        int tentativas = 0;
+
+        System.out.println("🎯 Jogo de Adivinhação!");
+        System.out.println("Tente adivinhar o número entre 1 e 100.");
+
+        do {
+            System.out.print("Digite sua tentativa: ");
+            tentativa = scanner.nextInt();
+            tentativas++;
+
+            if (tentativa > numeroSecreto) {
+                System.out.println("🔻 Muito alto!");
+            } else if (tentativa < numeroSecreto) {
+                System.out.println("🔺 Muito baixo!");
+            } else {
+                System.out.println("✅ Parabéns! Você acertou em " + tentativas + " tentativas.");
+            }
+
+        } while (tentativa != numeroSecreto);
+
+        scanner.close();
+    }
+}ntln("\n📋 TESTANDO VÁRIOS NÚMEROS:");
+        System.out.println("-".repeat(40));
+        System.out.println("Número | Por Extenso");
+        System.out.println("-".repeat(40));
+        
+        int[] numerosParaTestar = {
+            1, 7, 10, 12, 15, 19, 21, 30, 42, 50, 67, 78, 84, 99,
+            100, 101, 115, 121, 132, 150, 175, 187, 190, 199,
+            200, 215, 230, 245, 250, 267, 275, 288, 291, 299,
+            300, 315, 328, 340, 350, 367, 372, 381, 399,
+            400, 411, 423, 444, 456, 472, 485, 491, 499,
+            500, 512, 525, 538, 550, 563, 576, 588, 599,
+            600, 614, 627, 635, 648, 654, 667, 679, 699,
+            700, 712, 725, 738, 742, 756, 768, 773, 799,
+            800, 813, 824, 831, 845, 857, 869, 878, 899,
+            900, 911, 922, 933, 945, 954, 966, 978, 999, 1000
+        };
+        
+        for (int i = 0; i < 10; i++) {
+            int idx = (int)(Math.random() * numerosParaTestar.length);
+            int num = numerosParaTestar[idx];
+            System.out.printf("%-6d | %s%n", num, numeroPorExtenso(num));
+        }
+    }
+    
+    public static String numeroPorExtenso(int num) {
+        // Casos especiais
+        if (num == 1000) return "mil";
+        if (num == 100) return "cem";
+        
+        String[] unidades = {
+            "", "um", "dois", "três", "quatro", "cinco", 
+            "seis", "sete", "oito", "nove", "dez",
+            "onze", "doze", "treze", "quatorze", "quinze",
+            "dezesseis", "dezessete", "dezoito", "dezenove"
+        };
+        
+        String[] dezenas = {
+            "", "", "vinte", "trinta", "quarenta", "cinquenta",
+            "sessenta", "setenta", "oitenta", "noventa"
+        };
+        
+        String[] centenas = {
+            "", "cento", "duzentos", "trezentos", "quatrocentos",
+            "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"
+        };
+        
+        if (num < 20) {
+            return unidades[num];
+        }
+        
+        if (num < 100) {
+            int dezena = num / 10;
+            int unidade = num % 10;
+            
+            if (unidade == 0) {
+                return dezenas[dezena];
+            } else {
+                return dezenas[dezena] + " e " + unidades[unidade];
+            }
+        }
+        
+        int centena = num / 100;
+        int resto = num % 100;
+        
+        if (resto == 0) {
+            return centenas[centena];
+        } else {
+            return centenas[centena] + " e " + numeroPorExtenso(resto);
+        }
+    }
+}
