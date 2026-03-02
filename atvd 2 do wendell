@@ -1,0 +1,174 @@
+questao 1
+public class TESTE {
+    public static void main(String[] args) {
+        int num1 = 12;
+        int num2 = 25;
+        int maior = num1;
+        
+        if (num2 > maior) {  
+            maior = num2;      
+        }
+        System.out.println("Os números são esses: " + num1 + ", " + num2);
+        System.out.println("O número maior é: " + maior);
+    }
+}
+
+
+questão 2
+public class Teste {
+    public static void main(String[] args) {
+        int num1 = 12;
+        int num2 = 25;
+        int num3 = 28;
+        int maior = num1;
+        if (num2 > maior) {
+            maior = num2;
+        }
+        if (num3 > maior) {
+            maior = num3;
+        }
+        int menor = num1;
+        if (num2 < menor) {
+            menor = num2;
+        }
+        if (num3 < menor) {
+            menor = num3;
+        }
+        System.out.println("Os números são esses: " + num1 + ", " + num2 + ", " + num3);
+        System.out.println("O número MAIOR é: " + maior);
+        System.out.println("O número MENOR é: " + menor);
+    }
+}
+
+questão 3
+import java.util.Calendar;
+
+public class SaudacaoCalendar {
+    public static void main(String[] args) {
+        Calendar calendario = Calendar.getInstance();
+        int hora = calendario.get(Calendar.HOUR_OF_DAY); 
+        int minuto = calendario.get(Calendar.MINUTE);
+        
+        System.out.println("⏰ Hora atual: " + hora + ":" + String.format("%02d", minuto));
+        System.out.print("👉 ");
+        if (hora >= 5 && hora < 12) {
+            System.out.println("🌅 BOM DIA! Tenha um ótimo dia!");
+        } else if (hora >= 12 && hora < 18) {
+            System.out.println("☀️ BOA TARDE! Como está seu dia?");
+        } else if (hora >= 18 && hora < 23) {
+            System.out.println("🌙 BOA NOITE! Descanse bem!");
+        } else {
+            System.out.println("VAI DORMIR! Já passou da hora! (entre 23h e 5h)");
+        }
+    }
+}
+
+questão 4
+
+import java.util.Arrays;
+
+public class OrdemCrescente {
+    public static void main(String[] args) {
+        
+        int a = 25;
+        int b = 12;
+        int c = 18;
+        
+        int[] numeros = {a, b, c};
+        
+        System.out.println("Números originais: " + a + ", " + b + ", " + c);
+        
+        Arrays.sort(numeros);
+        
+        System.out.println("Ordem crescente: " + numeros[0] + ", " + numeros[1] + ", " + numeros[2]);
+    }
+}
+
+
+questão 5
+
+import java.time.LocalTime;
+import java.time.LocalDate;
+import java.time.Period;
+
+public class VerificarAcesso {
+    public static void main(String[] args) {
+        
+        String nome = "Aylan";
+        int diaNasc = 12;
+        int mesNasc = 01;
+        int anoNasc = 2010;
+        
+        LocalDate hoje = LocalDate.now();
+        LocalTime agora = LocalTime.now();
+        
+        LocalDate dataNasc = LocalDate.of(anoNasc, mesNasc, diaNasc);
+        int idade = Period.between(dataNasc, hoje).getYears();
+        
+        int hora = agora.getHour();
+        
+        String cumprimento;
+        if (hora >= 5 && hora < 12) {
+            cumprimento = "BOM DIA";
+        } else if (hora >= 12 && hora < 18) {
+            cumprimento = "BOA TARDE";
+        } else if (hora >= 18 && hora < 23) {
+            cumprimento = "BOA NOITE";
+        } else {
+            cumprimento = "BOA MADRUGADA";
+        }
+        
+        boolean maiorIdade = idade >= 18;
+        
+        // MOSTRA OS RESULTADOS
+        System.out.println("=================================");
+        System.out.println("       DADOS DO USUÁRIO");
+        System.out.println("=================================");
+        System.out.println("Nome: " + nome);
+        System.out.println("Nascimento: " + diaNasc + "/" + mesNasc + "/" + anoNasc);
+        System.out.println("Idade: " + idade + " anos");
+        System.out.println("Hora atual: " + agora.getHour() + ":" + String.format("%02d", agora.getMinute()));
+        System.out.println("Cumprimento: " + cumprimento + ", " + nome.split(" ")[0] + "!");
+        System.out.println("---------------------------------");
+        
+        if (maiorIdade) {
+            System.out.println("✅ ACESSO LIBERADO");
+        } else {
+            System.out.println("❌ ACESSO NEGADO - Menor de idade");
+            System.out.println("Faltam " + (18 - idade) + " anos");
+        }
+        System.out.println("=================================");
+    }
+}
+questão 6
+public class OperacoesCondicionais {
+    public static void main(String[] args) {
+        
+        int num1 = 10;
+        int num2 = 20;
+        
+        System.out.println("=== OPERAÇÕES CONDICIONAIS ===\n");
+        System.out.println("Números: " + num1 + " e " + num2);
+        System.out.println("-".repeat(30));
+        
+        if (num2 > num1) {
+            int soma = num1 + num2;
+            System.out.println("✅ " + num2 + " é maior que " + num1);
+            System.out.println("➡️  Operação: SOMA");
+            System.out.println(num1 + " + " + num2 + " = " + soma);
+            
+        } else if (num1 > num2) {
+            int subtracao = num1 - num2;
+            System.out.println("✅ " + num1 + " é maior que " + num2);
+            System.out.println("➡️  Operação: SUBTRAÇÃO");
+            System.out.println(num1 + " - " + num2 + " = " + subtracao);
+            
+        } else {
+            System.out.println("⚠️  Os números são IGUAIS");
+            System.out.println(num1 + " = " + num2);
+        }
+        
+        System.out.println("-".repeat(30));
+    }
+}
+
